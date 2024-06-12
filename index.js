@@ -5,7 +5,8 @@ const socketIo = require("socket.io");
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-
+const dotenv = require("dotenv");
+dotenv.config();
 app.use(express.static("public"));
 
 let pollResults = { option1: 0, option2: 0 };
