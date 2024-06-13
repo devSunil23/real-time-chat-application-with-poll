@@ -1,7 +1,7 @@
-var socket = io();
+const socket = io();
 
-var username = "";
-var typingTimeout;
+let username = "";
+let typingTimeout;
 
 function setUsername(event) {
     if (event.key === "Enter") {
