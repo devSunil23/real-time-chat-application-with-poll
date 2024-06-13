@@ -1,4 +1,4 @@
-const socket = io();
+var socket = io();
 
 var username = "";
 var typingTimeout;
