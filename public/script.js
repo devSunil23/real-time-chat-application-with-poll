@@ -54,6 +54,7 @@ socket.on("chat message", ({ username: sender, message, timestamp }) => {
     messageElement.innerHTML = `
     <div class="message-info">
       <strong>${sender}</strong>
+      <span class="timestamp">${timestamp}</span>
     </div>
     <div>${message}</div>
   `;
@@ -65,3 +66,10 @@ socket.on("typing", (isTyping) => {
     const typingIndicator = document.getElementById("typing-indicator");
     typingIndicator.textContent = isTyping ? "Someone is typing..." : "";
 });
+
+document
+    .getElementById("username-input")
+    .addEventListener("keypress", setUsername);
+document
+    .getElementById("message-input")
+    .addEventListener("keypress", sendMessage);
